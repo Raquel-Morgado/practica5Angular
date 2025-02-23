@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { IEntry } from '../../interfaces/ientry.interface';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-blog-form',
@@ -10,26 +11,32 @@ import { FormsModule } from '@angular/forms';
 })
 export class BlogFormComponent {
  @Output() sendEntry: EventEmitter<IEntry>= new EventEmitter();
-  entry: IEntry = {
-  title: '',
-  img: '',
-  description: '',
-  publish_date: '' 
-  };
   date: string = new Date().toLocaleDateString('es-ES');
 
-  ngOnInit(){
-    this.entry.publish_date=this.date;
+  ngOnChanges(){
   }
 
-  sendForm(){
-    console.log(this.entry)
-    this.sendEntry.emit(this.entry);
-    this.entry = {
-      title: '',
-      img: '',
-      description: '',
-      publish_date: '' 
-      };
-  }
+  sendForm(formulario : NgForm){
+    if (formulario.valid) {
+      let newEntry: IEntry = formulario.value;
+      newEntry.publish_date=this.date;
+      this.sendEntry.emit(newEntry);
+      formulario.reset();
+      
+      Swal.fire({
+        title: 'Correcto!',
+        text: 'Entrada dada de alta correctaemnte',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+
+    }else{
+      Swal.fire({
+        title: 'Error!',
+        text: 'Completa el formulario correctamente',
+        icon: 'error',
+        confirmButtonText: 'Completar'
+      });
+    }
+}
 }

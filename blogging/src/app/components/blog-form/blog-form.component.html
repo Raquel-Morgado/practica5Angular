@@ -1,34 +1,35 @@
 
-<section class="form-entry">
+<form class="form-entry" #formEntry="ngForm" (ngSubmit)="sendForm(formEntry)">
       <legend>Formulario de Publicación de Blog</legend>
   
       <!-- Campo para Título -->
       <div class="form-item">
-        <label for="titulo">Título de la entrada:</label>
-        <input type="text" id="titulo" [(ngModel)]="entry.title" required placeholder="Escribe el título aquí">
+        <label for="title">Título de la entrada:</label>
+        <input type="text" id="title" name="title" ngModel required placeholder="Escribe el título aquí">
       </div>
   
       <!-- Campo para Imagen (URL) -->
       <div class="form-item">
-        <label for="imagen">URL de la Imagen</label>
-        <input type="text" id="imagen"  [(ngModel)]="entry.img" required placeholder="Ingresa la URL de la imagen">
+        <label for="img">URL de la Imagen</label>
+        <input type="text" id="img" name="img" pattern="https?://.+\.(jpg|jpeg|png|gif|bmp|webp|svg)$"
+        ngModel required placeholder="Ingresa la URL de la imagen">
       </div>
   
       <!-- Campo para Texto o Cuerpo de la Noticia -->
       <div class="form-item">
-        <label for="cuerpo">Texto o Cuerpo de la entrada</label>
-        <textarea id="cuerpo"  [(ngModel)]="entry.description"  required placeholder="Escribe el cuerpo de la noticia aquí"></textarea>
+        <label for="description">Texto o Cuerpo de la entrada</label>
+        <textarea id="description" name="description" ngModel  required placeholder="Escribe el cuerpo de la noticia aquí"></textarea>
       </div>
   
       <!-- Campo para Fecha de Publicación -->
       <div class="form-item">
-        <label for="fecha">Fecha de la Publicación</label>
-        <input type="text" id="fecha"  [value]="date" disabled>
+        <label for="publish_date">Fecha de la Publicación</label>
+        <input type="text" id="publish_date" name="publish_date"  [value]="date" disabled>
       </div>
   
       <!-- Botón para Enviar el Formulario -->
       <div class="form-item">
-        <button (click)="sendForm()">Publicar</button>
+        <button>Publicar</button>
       </div>
-</section>
+    </form>
   
