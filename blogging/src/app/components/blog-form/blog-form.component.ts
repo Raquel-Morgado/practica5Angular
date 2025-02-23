@@ -13,9 +13,6 @@ export class BlogFormComponent {
  @Output() sendEntry: EventEmitter<IEntry>= new EventEmitter();
   date: string = new Date().toLocaleDateString('es-ES');
 
-  ngOnChanges(){
-  }
-
   sendForm(formulario : NgForm){
     if (formulario.valid) {
       let newEntry: IEntry = formulario.value;
