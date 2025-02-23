@@ -1,1 +1,34 @@
-<p>blog-form works!</p>
+
+<section>
+      <legend>Formulario de Publicación de Blog</legend>
+  
+      <!-- Campo para Título -->
+      <div>
+        <label for="titulo">Título de la entrada:</label>
+        <input type="text" id="titulo" [(ngModel)]="entry.title" required placeholder="Escribe el título aquí">
+      </div>
+  
+      <!-- Campo para Imagen (URL) -->
+      <div>
+        <label for="imagen">URL de la Imagen</label>
+        <input type="url" id="imagen"  [(ngModel)]="entry.img" required placeholder="Ingresa la URL de la imagen">
+      </div>
+  
+      <!-- Campo para Texto o Cuerpo de la Noticia -->
+      <div>
+        <label for="cuerpo">Texto o Cuerpo de la entrada</label>
+        <textarea id="cuerpo"  [(ngModel)]="entry.description"  required placeholder="Escribe el cuerpo de la noticia aquí"></textarea>
+      </div>
+  
+      <!-- Campo para Fecha de Publicación -->
+      <div>
+        <label for="fecha">Fecha de la Publicación</label>
+        <input type="date" id="fecha"  [value]="date" disabled>
+      </div>
+  
+      <!-- Botón para Enviar el Formulario -->
+      <div>
+        <button (click)="sendForm()">Publicar Noticia</button>
+      </div>
+</section>
+  

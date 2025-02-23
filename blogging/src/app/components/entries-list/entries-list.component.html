@@ -1,1 +1,11 @@
-<p>entries-list works!</p>
+
+<article class="entry-list">
+    @for (entry of entries(); track entry.title) {
+        <section class="entry">
+            <h2>{{entry.title}}</h2>
+            <img [src]="entry.img" [alt]="entry.title">
+            <p>{{entry.description}}</p>
+            <p class="entry-foot">{{entry.publish_date}}</p>
+        </section>
+    }
+</article>

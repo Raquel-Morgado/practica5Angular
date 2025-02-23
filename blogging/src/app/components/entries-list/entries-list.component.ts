@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { IEntry } from '../../interfaces/ientry.interface';
 
 @Component({
   selector: 'app-entries-list',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './entries-list.component.css'
 })
 export class EntriesListComponent {
+ entries = input<IEntry[]>([]);
+
 
 }
