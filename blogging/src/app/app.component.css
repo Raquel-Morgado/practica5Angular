@@ -1,0 +1,49 @@
+
+.header {
+    background-color: #4A90E2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* En móviles, el contenido está en columna */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estilos para las secciones (formulario y lista de entradas) */
+main section {
+    width: 100%; /* En móvil ocupa todo el ancho */
+    margin-bottom: 20px; /* Espacio entre los componentes */
+}
+
+/* Estilo para el formulario y la lista en pantallas grandes */
+@media (min-width: 1024px) {
+    main {
+        max-width: 1200px;
+        margin: 0 auto; /* Centra el contenido */
+}
+
+    /* Alinea los componentes en 50% de la pantalla */
+    .form,
+    .entries-list {
+        width: 48%; /* Cada componente ocupa el 50% del contenedor */
+        margin: 10px;
+    }
+
+    /* Ajusta el margen entre los componentes */
+    .form {
+        margin-right: 10px; 
+    }
+
+    .entries-list {
+        margin-left: 10px;
+}
+}

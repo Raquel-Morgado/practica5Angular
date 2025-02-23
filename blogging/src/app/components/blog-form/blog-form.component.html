@@ -1,33 +1,33 @@
 
-<section>
+<section class="form-entry">
       <legend>Formulario de Publicación de Blog</legend>
   
       <!-- Campo para Título -->
-      <div>
+      <div class="form-item">
         <label for="titulo">Título de la entrada:</label>
         <input type="text" id="titulo" [(ngModel)]="entry.title" required placeholder="Escribe el título aquí">
       </div>
   
       <!-- Campo para Imagen (URL) -->
-      <div>
+      <div class="form-item">
         <label for="imagen">URL de la Imagen</label>
         <input type="url" id="imagen"  [(ngModel)]="entry.img" required placeholder="Ingresa la URL de la imagen">
       </div>
   
       <!-- Campo para Texto o Cuerpo de la Noticia -->
-      <div>
+      <div class="form-item">
         <label for="cuerpo">Texto o Cuerpo de la entrada</label>
         <textarea id="cuerpo"  [(ngModel)]="entry.description"  required placeholder="Escribe el cuerpo de la noticia aquí"></textarea>
       </div>
   
       <!-- Campo para Fecha de Publicación -->
-      <div>
+      <div class="form-item">
         <label for="fecha">Fecha de la Publicación</label>
-        <input type="date" id="fecha"  [value]="date" disabled>
+        <input type="text" id="fecha"  [value]="date" disabled>
       </div>
   
       <!-- Botón para Enviar el Formulario -->
-      <div>
+      <div class="form-item">
         <button (click)="sendForm()">Publicar Noticia</button>
       </div>
 </section>

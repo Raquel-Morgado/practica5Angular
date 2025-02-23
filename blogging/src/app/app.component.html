@@ -1,8 +1,11 @@
+<nav class="header">
+  <h1>Bloggin en Angular</h1>
+</nav>
 <main>
-  <section>
+  <section class="form">
     <app-blog-form (sendEntry)="getEntry($event)"></app-blog-form>
   </section>
-  <section>
+  <section class="entries-list">
     <app-entries-list [entries]="entriesList"></app-entries-list>
   </section>
 </main>

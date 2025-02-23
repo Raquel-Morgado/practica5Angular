@@ -3,8 +3,8 @@
     @for (entry of entries(); track entry.title) {
         <section class="entry">
             <h2>{{entry.title}}</h2>
-            <img [src]="entry.img" [alt]="entry.title">
-            <p>{{entry.description}}</p>
+            <img [src]="entry.img" [alt]="entry.title"class="entry-img">
+            <p class="entry-description">{{entry.description}}</p>
             <p class="entry-foot">{{entry.publish_date}}</p>
         </section>
     }

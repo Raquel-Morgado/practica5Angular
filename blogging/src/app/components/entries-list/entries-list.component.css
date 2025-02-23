@@ -1,0 +1,76 @@
+/* Estilos generales para el contenedor de las tarjetas */
+.entry-list {
+    display: grid;
+    grid-template-columns: 1fr; /* Solo una columna en pantallas pequeñas */
+    gap: 16px;
+    padding: 16px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Estilos de cada tarjeta */
+  .entry-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .entry-card:hover {
+    transform: translateY(-8px); /* Efecto hover para las tarjetas */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Estilos de la imagen de cada tarjeta */
+  .entry-img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    object-fit: cover;
+  }
+  
+  /* Título de la entrada */
+  .entry h2 {
+    font-size: 1.5rem;
+    padding: 16px;
+    margin: 0;
+    color: #333;
+  }
+  
+  /* Descripción de la entrada */
+  .entry-description {
+    font-size: 1rem;
+    color: #666;
+    padding: 0 16px 16px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* Pie de la tarjeta (fecha) */
+  .entry-foot {
+    font-size: 0.875rem;
+    color: #999;
+    padding: 0 16px 16px;
+    margin: 0;
+  }
+  
+  /* Estilos para pantallas más grandes */
+  @media (min-width: 600px) {
+    .entry-list {
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas medianas */
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .entry-list {
+      grid-template-columns: repeat(3, 1fr); /* Tres columnas para pantallas grandes */
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .entry-list {
+      grid-template-columns: repeat(4, 1fr); /* Cuatro columnas para pantallas extra grandes */
+    }
+  }
+  
