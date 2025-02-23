@@ -25,7 +25,7 @@ export class BlogFormComponent {
       
       Swal.fire({
         title: 'Correcto!',
-        text: 'Entrada dada de alta correctaemnte',
+        text: 'Entrada dada de alta correctamente',
         icon: 'success',
         confirmButtonText: 'OK'
       });
