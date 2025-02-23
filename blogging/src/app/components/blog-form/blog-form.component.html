@@ -11,7 +11,7 @@
       <!-- Campo para Imagen (URL) -->
       <div class="form-item">
         <label for="imagen">URL de la Imagen</label>
-        <input type="url" id="imagen"  [(ngModel)]="entry.img" required placeholder="Ingresa la URL de la imagen">
+        <input type="text" id="imagen"  [(ngModel)]="entry.img" required placeholder="Ingresa la URL de la imagen">
       </div>
   
       <!-- Campo para Texto o Cuerpo de la Noticia -->
@@ -28,7 +28,7 @@
   
       <!-- Botón para Enviar el Formulario -->
       <div class="form-item">
-        <button (click)="sendForm()">Publicar Noticia</button>
+        <button (click)="sendForm()">Publicar</button>
       </div>
 </section>
   
